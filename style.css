@@ -1,0 +1,144 @@
+*{
+margin: 0;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: #f6f6af;
+    padding: 10px;
+                   
+}
+
+.todo-app{
+    width: 100%;
+    max-width:540px;
+    margin-top: 100px;   
+    background: #ffffff;    
+    border-radius: 10px;
+    padding: 20px;  
+    margin: 100px auto 20px;  /*  top , left +right  and bottom , sits on page*/
+
+    
+}
+
+.todo-app h2{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    color: #000000;
+
+}
+
+/* tick symbol */
+.fa-solid{
+    font-size: 40px;
+    margin-left: 25px;
+    display: flex;
+    align-items:  center;
+
+
+}
+
+/* input row for list */
+.add-text-row{ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    background: #f6f6af;
+    border-radius: 30px;   
+    margin-bottom: 25px;
+    padding-left: 10px;
+}
+
+
+input{
+    flex: 1;    /* take full length of flex box  */
+    font-size: 20px;
+    border: none;
+    outline:none;
+    background-color: transparent; /* make the input box seemless  */
+    font-size: 20px;
+    color: #000000;
+    border-radius: 30px; 
+    padding-left: 10px;  
+}
+
+
+
+/* no need to call class, only have on button and input  */
+button{
+    border: none;
+    outline:none;
+    background: #e3e3e3;
+    font-size: 20px;
+    color: #000000;
+    border-radius: 30px;
+    padding: 20px 40px;
+    cursor: pointer;
+}
+
+
+/*?styling li element that are yet to be created  */
+ul li{
+    list-style-type: none; /* removes auto bullet points */
+    font-size: 20px;
+    margin-top:10px;
+    border-radius: 30px;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+
+/* add the content (icon)  before the li element  */
+/* this has been copied from font awsome  , header link from cdnjs*/
+ul li::before {    
+    font-family: "Font Awesome 5 Free";
+    font-weight: 500;
+    content: "\f111";
+    display: inline-block;
+   font-style: normal;
+   font-variant: normal;
+   text-rendering: auto;
+ -webkit-font-smoothing: antialiased;
+ margin-right: 20px;           
+}
+
+
+
+
+/* added list items are styles ebfore they are even created */
+ul li.checked{     
+    color:#808080 ;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    font-weight: 900;
+    content: "\f058";
+    color: #000000;
+  
+
+}
+
+/* styling the created span for the X icon  */
+ul li span {
+    position: absolute;
+    right:10px;
+    top: 0px;
+    font-size: 15px;   
+    padding: 12px  20px  12px;
+    text-align: center;
+}
+
+ul li span:hover{
+    background: #e3e3e3;    
+    border-radius: 50px;
+    color: #000000;
+
+}
