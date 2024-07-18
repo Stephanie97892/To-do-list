@@ -13,10 +13,18 @@ function addTask(){
         let li =document.createElement("li"); 
         li.innerHTML = inputBox.value;  // We target the innerhtml of the variable craeted that why names must match 
         listContainer.appendChild(li);
-        let span = document.createElement("span");
-        span.innerHTML = '<i class="fas fa-x"></i>';   // not using the uncode here 
-        li.appendChild(span);   // attach the nnew span to the li
-    }
+        
+        let span1 = document.createElement("span");
+        span1.innerHTML = '<i class="fas fa-x"></i>';   // not using the uncode here 
+        li.appendChild(span1);   // attach the new span to the li
+        span1.classList.add("deleteBtn")
+
+        let span2 = document.createElement("span");
+        span2.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
+        li.appendChild(span2);
+        span2.classList.add("editBtn")
+
+           }
     inputBox.value= '';
     saveData (); // function called to save data
 }
@@ -38,10 +46,31 @@ listContainer.addEventListener("click", function(event){
         event.target.classList.toggle("checked");  // toggles the state of class on and off 
         saveData (); // function called  to save changes
     } 
-    else if (event.target.tagName === "SPAN"){ // Upper case
+    else if (event.target.classList.contains("deleteBtn")){ // Upper case
         event.target.parentElement.remove();   // removes parent element of the span 
         saveData (); // function called to save changes
-        }    
+        } 
+    else if (event.target.classList.contains("editBtn")){
+          let listItem = event.target.parentElement;
+          let currentText = listItem.textContent.trim();   // trim this removes any sapcaes before or aftr the prompt , 
+
+          let newText = prompt("Please edit item", currentText);  // added the currect li data in the promt field.
+
+          if (newText!== null && newText.trim() !==""){
+            listItem.textContent = newText;
+
+            let span1 = document.createElement("span");
+        span1.innerHTML = '<i class="fas fa-x"></i>';   
+        listItem.appendChild(span1);   
+        span1.classList.add("deleteBtn")
+
+        let span2 = document.createElement("span");
+        span2.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
+        listItem.appendChild(span2);
+        span2.classList.add("editBtn")
+            saveData();
+          }        
+    }
 }, false) // if false does nothing 
 
 
@@ -65,4 +94,5 @@ function getData (){
 }
 
 getData ();  // call the function to display data 
+
 

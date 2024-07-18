@@ -127,18 +127,29 @@ ul li.checked::before{
 }
 
 /* styling the created span for the X icon  */
-ul li span {
-    position: absolute;
-    right:10px;
-    top: 0px;
-    font-size: 15px;   
-    padding: 12px  20px  12px;
-    text-align: center;
-}
+
 
 ul li span:hover{
     background: #e3e3e3;    
     border-radius: 50px;
     color: #000000;
 
+}
+
+.editBtn{
+    position: absolute;
+    right:50px;
+    top: 0px;
+    font-size: 15px;   
+    padding: 12px  20px  12px;
+    text-align: center;
+}
+
+.deleteBtn{
+    position: absolute;
+    right:10px;
+    top: 0px;
+    font-size: 15px;   
+    padding: 12px  20px  12px;
+    text-align: center;
 }
