@@ -23,6 +23,7 @@ box-sizing: border-box;
     border-radius: 10px;
     padding: 20px;  
     margin: 100px auto 20px;  /*  top , left +right  and bottom , sits on page*/
+    border: #8a8a8a solid;
 
     
 }
@@ -91,7 +92,7 @@ ul li{
     font-size: 20px;
     margin-top:10px;
     border-radius: 30px;
-    padding: 20px;
+    padding: 7px;
     cursor: pointer;
     position: relative;
 }
