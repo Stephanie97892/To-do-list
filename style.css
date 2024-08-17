@@ -8,9 +8,11 @@ box-sizing: border-box;
 .container{
     width: 100%;
     min-height: 100vh;
-    background: #f6f6af;
+    background: #ecec97;
     padding: 10px;
-                   
+                 
+    
+    background: linear-gradient( #ecec97, #f2dcdc);
 }
 
 .todo-app{
@@ -70,7 +72,7 @@ input{
 
 
 
-/* no need to call class, only have on button and input  */
+/* no need to call class, only have one button and input  */
 button{
     border: none;
     outline:none;
@@ -152,4 +154,30 @@ ul li span:hover{
     font-size: 15px;   
     padding: 12px  20px  12px;
     text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    
+   
+    .container {
+        padding: 5px;
+    }
+    .todo-app{
+        max-width:400px;       
+        
+    }
+    
+    .todo-app h2{        
+        font-size:40px;
+        
+    }
+
+    button{
+       
+        padding: 10px 10px;
+        
+    }
+
+
 }

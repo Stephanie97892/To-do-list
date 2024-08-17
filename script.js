@@ -11,7 +11,7 @@ function addTask(){
     }
     else{
         let li =document.createElement("li"); 
-        li.innerHTML = inputBox.value;  // We target the innerhtml of the variable craeted that why names must match 
+        li.innerHTML = inputBox.value;  // We target the inner html of the variable craeted that why names must match 
         listContainer.appendChild(li);
         
         let span1 = document.createElement("span");
@@ -54,7 +54,7 @@ listContainer.addEventListener("click", function(event){
           let listItem = event.target.parentElement;
           let currentText = listItem.textContent.trim();   // trim this removes any sapcaes before or aftr the prompt , 
 
-          let newText = prompt("Please edit item", currentText);  // added the currect li data in the promt field.
+          let newText = prompt("Edit text:", currentText);  // added the currect li data in the promt field.
 
           if (newText!== null && newText.trim() !==""){
             listItem.textContent = newText;
